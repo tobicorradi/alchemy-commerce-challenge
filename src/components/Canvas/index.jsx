@@ -21,7 +21,7 @@ const Canvas = ({placedSquares, setPlacedSquares}) => {
   const handleDrop = (e) => {
     const draggedData = e.nativeEvent.dataTransfer.getData("new-square");
     const newSquare = JSON.parse(draggedData)
-    let canvasDimensions = e.target.getBoundingClientRect();
+    let canvasDimensions = dropArea.current.getBoundingClientRect();
     setPlacedSquares(oldArr => [...oldArr, {
         id: oldArr.length + 1,
         color: newSquare.color,
