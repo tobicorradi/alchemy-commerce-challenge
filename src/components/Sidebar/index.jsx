@@ -28,14 +28,12 @@ const Sidebar = ({ squares}) => {
       <p>Grab whatever square you'd like into the canvas</p>
       <SquaresWrapper>
         {squares.map((square, index) => (
-          <div
+          <Square
             key={index}
-            id={square.id}
             color={square.color}
             data-color={square.color}
             draggable
             onDragStart={handleDragStart}
-            style={{marginBottom: 10, marginRight: 10, backgroundColor: square.color, width: 100, height: 100}}
           />
         ))}
       </SquaresWrapper>
