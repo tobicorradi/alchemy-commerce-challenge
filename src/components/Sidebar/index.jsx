@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Square from "../Square";
+
 const Section = styled.article`
   height: 100vh;
   background-color: white;

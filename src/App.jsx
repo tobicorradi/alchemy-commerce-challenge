@@ -11,16 +11,16 @@ const Wrapper = styled.section`
 `
 
 function App() {
+  
   const [squares, setSquares] = useState([
     {id: 1, color: 'orange'},
     {id: 2, color: 'green'},
     {id: 3, color: 'royalblue'},
     {id: 4, color: 'darkmagenta'},
     {id: 5, color: 'sienna'},
-
-])
-
+  ])
   const [placedSquares, setPlacedSquares] = useState([])
+
   return (
       <Wrapper>
         <Sidebar squares={squares} />
