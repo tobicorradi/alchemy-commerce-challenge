@@ -8,8 +8,8 @@ const Block = styled.div`
     box-shadow: 3px 2px 11px #00000036;
     background: ${props => props.color};
 `
-const Square = ({color, ...reset}) => {
-    return  <Block {...reset} style={{backgroundColor: color}} />
+const Square = ({color, isSelected, ...reset}) => {
+    return  <Block {...reset} style={{backgroundColor: color, border: isSelected ? '1 px solid red' : null}} />
 }
 
 export default Square

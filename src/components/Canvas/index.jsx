@@ -26,10 +26,10 @@ const Canvas = ({placedSquares, setPlacedSquares}) => {
         id: oldArr.length + 1,
         color: newSquare.color,
         initialX: e.pageX - 50 - canvasDimensions.left,
-        initialY: e.pageY - 50 - canvasDimensions.top
+        initialY: e.pageY - 50 - canvasDimensions.top,
+        isSelected: false,
     }])
   };
-  
   return (
     <DropSection
         ref={dropArea}
@@ -37,7 +37,7 @@ const Canvas = ({placedSquares, setPlacedSquares}) => {
         onDragOver={handleDragOver}
     >
         {placedSquares.map(square => (
-            <Draggable defaultPosition={{x: square.initialX, y: square.initialY }}>
+            <Draggable key={square.id} defaultPosition={{x: square.initialX, y: square.initialY }}>
                 <div style={{position: 'absolute', display: 'inline-block'}}>
                     <Square style={{position: 'absolute'}} color={square.color}/>
                 </div>
