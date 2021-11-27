@@ -39,7 +39,7 @@ const Canvas = ({placedSquares, setPlacedSquares}) => {
         {placedSquares.map(square => (
             <Draggable key={square.id} defaultPosition={{x: square.initialX, y: square.initialY }}>
                 <div style={{position: 'absolute', display: 'inline-block'}}>
-                    <Square style={{position: 'absolute'}} color={square.color}/>
+                    <Square color={square.color} style={{position: 'absolute'}}/>
                 </div>
             </Draggable>
         ))}

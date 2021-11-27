@@ -9,7 +9,7 @@ const Block = styled.div`
     background: ${props => props.color};
 `
 const Square = ({color, isSelected, ...reset}) => {
-    return  <Block {...reset} style={{backgroundColor: color, border: isSelected ? '1 px solid red' : null}} />
+    return  <Block color={color} {...reset} style={{ border: isSelected ? '1 px solid red' : null}} />
 }
 
 export default Square
