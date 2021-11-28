@@ -1,7 +1,7 @@
 const initialState = {
     placedSquares: []
 }
-const placedSquares = (state = initialState, action) => {
+const placedSquaresReducer = (state = initialState, action) => {
     switch(action.type){
         case 'ADD_SQUARE':
             const addedSquare = [...state.placedSquares, action.payload]
@@ -19,4 +19,4 @@ const placedSquares = (state = initialState, action) => {
     }
 }
 
-export default placedSquares
+export default placedSquaresReducer

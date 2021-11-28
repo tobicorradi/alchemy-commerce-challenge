@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
-import placedSquares from './reducers/placedSquares';
+import placedSquares from './reducers/placedSquaresReducer';
 import { Provider } from 'react-redux';
 
 const store = createStore(placedSquares, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
