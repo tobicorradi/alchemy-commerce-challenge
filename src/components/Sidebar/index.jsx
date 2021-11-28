@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Square from "../Square";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Section = styled.article`
   height: 100vh;
@@ -17,7 +17,7 @@ const SquaresWrapper = styled.div`
 `;
 
 const Sidebar = () => {
-  const squares = useSelector(state => state.sidebarSquares)
+  const squares = useSelector((state) => state.sidebarSquares);
   const handleDragStart = (e) => {
     const color = e.target.dataset.color;
     const dragObj = JSON.stringify({
@@ -30,15 +30,18 @@ const Sidebar = () => {
       <h1>Sidebar</h1>
       <p>Grab whatever square you'd like onto the canvas</p>
       <SquaresWrapper>
-        {squares.map((square, index) => (
-          <Square
-            key={index}
-            color={square.color}
-            data-color={square.color}
-            draggable
-            onDragStart={handleDragStart}
-          />
-        ))}
+        {squares.map((square, index) => {
+          const { color } = square;
+          return (
+            <Square
+              key={index}
+              color={color}
+              data-color={color}
+              draggable
+              onDragStart={handleDragStart}
+            />
+          );
+        })}
       </SquaresWrapper>
     </Section>
   );
