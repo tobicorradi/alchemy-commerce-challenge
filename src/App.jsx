@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Canvas from './components/Canvas';
 import Sidebar from './components/Sidebar';
 import styled from 'styled-components';
@@ -10,19 +9,10 @@ const Wrapper = styled.section`
   overflow: hidden;
 `
 function App() {
-  
-  const [squares, setSquares] = useState([
-    {id: 1, color: 'orange'},
-    {id: 2, color: 'green'},
-    {id: 3, color: 'royalblue'},
-    {id: 4, color: 'darkmagenta'},
-    {id: 5, color: 'sienna'},
-  ])
-
   return (
       <Wrapper>
-        <Sidebar squares={squares} />
-        <Canvas/>
+        <Sidebar />
+        <Canvas />
       </Wrapper>
   );
 }

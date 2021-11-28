@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
-import placedSquares from './reducers/placedSquaresReducer';
+import squaresReducer from './reducers/squaresReducer';
 import { Provider } from 'react-redux';
 
-const store = createStore(placedSquares, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
+const store = createStore(squaresReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() )
 
 ReactDOM.render(
   <React.StrictMode>

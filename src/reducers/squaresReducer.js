@@ -1,7 +1,14 @@
 const initialState = {
-    placedSquares: []
+    placedSquares: [],
+    sidebarSquares: [
+        {id: 1, color: 'orange'},
+        {id: 2, color: 'green'},
+        {id: 3, color: 'royalblue'},
+        {id: 4, color: 'darkmagenta'},
+        {id: 5, color: 'sienna'},
+    ]
 }
-const placedSquaresReducer = (state = initialState, action) => {
+const squaresReducer = (state = initialState, action) => {
     switch(action.type){
         case 'ADD_SQUARE':
             const addedSquare = [...state.placedSquares, action.payload]
@@ -19,4 +26,4 @@ const placedSquaresReducer = (state = initialState, action) => {
     }
 }
 
-export default placedSquaresReducer
+export default squaresReducer

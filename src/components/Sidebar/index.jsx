@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Square from "../Square";
-
+import {  useSelector } from "react-redux";
 const Section = styled.article`
   height: 100vh;
   background-color: white;
@@ -15,7 +15,8 @@ const SquaresWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const Sidebar = ({ squares }) => {
+const Sidebar = () => {
+  const squares = useSelector(state => state.sidebarSquares)
   const handleDragStart = (e) => {
     const color = e.target.dataset.color;
     const dragObj = JSON.stringify({
