@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import Square from "../Square";
 import styled from "styled-components";
 import Draggable from 'react-draggable';
-
+import { useSelector, useDispatch } from 'react-redux'
+import { createSquare } from "../../actions";
 const DropSection = styled.article`
   height: 100vh;
   background-color: white;
@@ -12,24 +13,26 @@ const DropSection = styled.article`
   background-size: 22px 22px;
 `;
 
-const Canvas = ({placedSquares, setPlacedSquares}) => {
-  
+const Canvas = () => {
+  const dispatch = useDispatch()
   const dropArea = useRef();
-  
+  const placedSquares = useSelector(state => state.placedSquares)
+
   const handleDragOver = (e) => e.preventDefault();
 
   const handleDrop = (e) => {
     const draggedData = e.nativeEvent.dataTransfer.getData("new-square");
     const newSquare = JSON.parse(draggedData)
-    let canvasDimensions = dropArea.current.getBoundingClientRect();
-    setPlacedSquares(oldArr => [...oldArr, {
-        id: oldArr.length + 1,
-        color: newSquare.color,
-        initialX: e.pageX - 50 - canvasDimensions.left,
-        initialY: e.pageY - 50 - canvasDimensions.top,
-        isSelected: false,
-    }])
-  };
+    const canvasDimensions = dropArea.current.getBoundingClientRect();
+
+    dispatch(createSquare({  
+      id: placedSquares.length + 1,
+      color: newSquare.color,
+      initialX: e.pageX - 50 - canvasDimensions.left,
+      initialY: e.pageY - 50 - canvasDimensions.top,
+      isSelected: false,}))
+    };
+    
   return (
     <DropSection
         ref={dropArea}

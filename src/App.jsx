@@ -9,7 +9,6 @@ const Wrapper = styled.section`
   max-height: 100vh;
   overflow: hidden;
 `
-
 function App() {
   
   const [squares, setSquares] = useState([
@@ -24,7 +23,7 @@ function App() {
   return (
       <Wrapper>
         <Sidebar squares={squares} />
-        <Canvas placedSquares={placedSquares} setPlacedSquares={setPlacedSquares}/>
+        <Canvas/>
       </Wrapper>
   );
 }
