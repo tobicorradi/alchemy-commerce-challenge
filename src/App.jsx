@@ -18,7 +18,6 @@ function App() {
     {id: 4, color: 'darkmagenta'},
     {id: 5, color: 'sienna'},
   ])
-  const [placedSquares, setPlacedSquares] = useState([])
 
   return (
       <Wrapper>
