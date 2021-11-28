@@ -15,14 +15,14 @@ const SquaresWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-const Sidebar = ({ squares}) => {
-    const handleDragStart = (e) => {
-        const color = e.target.dataset.color
-        const dragObj = JSON.stringify({
-            color,
-        })
-        e.nativeEvent.dataTransfer.setData('new-square', dragObj)
-    }
+const Sidebar = ({ squares }) => {
+  const handleDragStart = (e) => {
+    const color = e.target.dataset.color;
+    const dragObj = JSON.stringify({
+      color,
+    });
+    e.nativeEvent.dataTransfer.setData("new-square", dragObj);
+  };
   return (
     <Section>
       <h1>Sidebar</h1>
