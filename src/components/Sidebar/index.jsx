@@ -28,7 +28,7 @@ const Sidebar = () => {
   return (
     <Section>
       <h1>Sidebar</h1>
-      <p>Grab whatever square you'd like into the canvas</p>
+      <p>Grab whatever square you'd like onto the canvas</p>
       <SquaresWrapper>
         {squares.map((square, index) => (
           <Square
