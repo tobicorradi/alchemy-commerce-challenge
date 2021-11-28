@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Square from "../Square";
 import {  useSelector } from "react-redux";
+
 const Section = styled.article`
   height: 100vh;
   background-color: white;

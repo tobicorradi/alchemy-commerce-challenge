@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useSelector, useDispatch } from "react-redux";
 import { createSquare } from "../../actions";
+
 const DropSection = styled.article`
   height: 100vh;
   background-color: white;
